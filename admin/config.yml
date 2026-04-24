@@ -1,0 +1,38 @@
+backend:
+  name: github
+  repo: DJ-OMAN237
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "mixes"
+    label: "Video Releases"
+    folder: "content/mixes"
+    create: true
+    sortable_fields: ['date']
+    fields:
+      - {label: "Mix Title", name: "title", widget: "string"}
+      - {label: "YouTube ID", name: "youtubeId", widget: "string"}
+      - {label: "Release Date", name: "date", widget: "datetime"}
+      - {label: "Genre", name: "genre", widget: "string"}
+
+  - name: "tour"
+    label: "Tour Dates"
+    folder: "content/tour"
+    create: true
+    fields:
+      - {label: "Date & City", name: "title", widget: "string"}
+      - {label: "Venue", name: "venue", widget: "string"}
+      - {label: "Ticket Link", name: "link", widget: "string"}
+
+  # ADDED: Collections for Events & Socials (Per your request)
+  - name: "events"
+    label: "Event Galleries"
+    folder: "content/events"
+    create: true
+    fields:
+      - {label: "Event Type", name: "title", widget: "string", hint: "e.g., Weddings, Graduations"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Gallery Images", name: "gallery", widget: "list", fields: [{label: "Image", name: "image", widget: "image"}]}
